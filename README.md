@@ -3,7 +3,7 @@
 ## Installation
 
 ```
-yarn add -D @hbd/eslint-config-react-native
+yarn add -D @sdcxp/eslint-config-react-native
 ```
 
 _Note: We're using `yarn` to install deps. Feel free to change commands to use `npm` 3+ and `npx` if you like_
