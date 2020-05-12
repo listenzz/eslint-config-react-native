@@ -10,19 +10,27 @@
 
 module.exports = {
   env: {
-    es6: true
+    es6: true,
   },
 
   parserOptions: {
-    sourceType: 'module'
+    sourceType: 'module',
   },
 
-  plugins: ['eslint-comments', 'prettier', 'react', 'react-hooks', 'react-native', 'jest'],
+  plugins: [
+    'eslint-comments',
+    'prettier',
+    'react',
+    'react-hooks',
+    'react-native',
+    '@react-native-community',
+    'jest',
+  ],
 
   settings: {
     react: {
-      version: 'detect'
-    }
+      version: 'detect',
+    },
   },
 
   overrides: [
@@ -35,8 +43,8 @@ module.exports = {
         // The following rules are made available via `eslint-plugin-flowtype`
 
         'flowtype/define-flow-type': 1,
-        'flowtype/use-flow-type': 1
-      }
+        'flowtype/use-flow-type': 1,
+      },
     },
     {
       files: ['*.ts', '*.tsx'],
@@ -44,16 +52,16 @@ module.exports = {
       plugins: ['@typescript-eslint/eslint-plugin'],
       rules: {
         '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
-        'no-unused-vars': 'off'
-      }
+        'no-unused-vars': 'off',
+      },
     },
     {
       files: ['*.{spec,test}.{js,ts,tsx}', '**/__tests__/**/*.{js,ts,tsx}'],
       env: {
         jest: true,
-        'jest/globals': true
-      }
-    }
+        'jest/globals': true,
+      },
+    },
   ],
 
   // Map from global var to bool specifying if it can be redefined
@@ -74,7 +82,7 @@ module.exports = {
     EventTarget: false,
     exports: false,
     fetch: false,
-    FormData: false,
+    FormData: true,
     global: false,
     Map: true,
     module: false,
@@ -89,7 +97,7 @@ module.exports = {
     setInterval: false,
     setTimeout: false,
     window: false,
-    XMLHttpRequest: false
+    XMLHttpRequest: false,
   },
 
   rules: {
@@ -290,6 +298,6 @@ module.exports = {
     'jest/no-disabled-tests': 1,
     'jest/no-focused-tests': 1,
     'jest/no-identical-title': 1,
-    'jest/valid-expect': 1
-  }
-};
+    'jest/valid-expect': 1,
+  },
+}
