@@ -51,7 +51,10 @@ module.exports = {
       parser: '@typescript-eslint/parser',
       plugins: ['@typescript-eslint/eslint-plugin'],
       rules: {
-        '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+        '@typescript-eslint/no-unused-vars': [
+          'warn',
+          { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+        ],
         'no-unused-vars': 'off',
       },
     },
@@ -60,6 +63,9 @@ module.exports = {
       env: {
         jest: true,
         'jest/globals': true,
+      },
+      rules: {
+        'react-native/no-inline-styles': 0,
       },
     },
   ],
@@ -77,13 +83,16 @@ module.exports = {
     clearTimeout: false,
     console: false,
     document: false,
+    ErrorUtils: false,
     escape: false,
     Event: false,
     EventTarget: false,
     exports: false,
     fetch: false,
     FormData: true,
-    global: false,
+    global: true,
+    Headers: false,
+    Intl: false,
     Map: true,
     module: false,
     navigator: false,
@@ -96,6 +105,9 @@ module.exports = {
     setImmediate: true,
     setInterval: false,
     setTimeout: false,
+    URL: false,
+    URLSearchParams: false,
+    WebSocket: true,
     window: false,
     XMLHttpRequest: false,
   },
@@ -209,10 +221,6 @@ module.exports = {
     'eslint-comments/no-unlimited-disable': 1, // disallows eslint-disable comments without rule names
     'eslint-comments/no-unused-disable': 1, // disallow disables that don't cover any errors
     'eslint-comments/no-unused-enable': 1, // // disallow enables that don't enable anything or enable rules that weren't disabled
-
-    // Prettier Plugin
-    // https://github.com/prettier/eslint-plugin-prettier
-    'prettier/prettier': 2,
 
     // Stylistic Issues
     // These rules are purely matters of style and are quite subjective.
