@@ -17,9 +17,13 @@ module.exports = {
     sourceType: 'module',
   },
 
+  extends: [
+    'plugin:prettier/recommended', // https://github.com/prettier/eslint-plugin-prettier#recommended-configuration
+    'prettier/react',
+  ],
+
   plugins: [
     'eslint-comments',
-    'prettier',
     'react',
     'react-hooks',
     'react-native',
