@@ -1,6 +1,6 @@
 {
   "name": "@gfez/eslint-config-react-native",
-  "version": "1.4.0",
+  "version": "1.5.1",
   "description": "ESLint config for React Native",
   "main": "index.js",
   "license": "MIT",
